@@ -1,6 +1,7 @@
-var path = require('path')
+let path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+let aylien = require('aylien-news-api')
 
 const app = express()
 
