@@ -3,35 +3,62 @@
     <head>
         <meta charset="utf-8">
         <title>Evaluate a news article using Natural Language Processing!</title>
+        <script src="https://kit.fontawesome.com/26eb599f43.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+            <h1>Udacity FEND NLP Project</h1>
         </header>
 
         <main>
             <section>
+                <div id="app__heading">
+                    <p>
+                        This app utilizes the Aylien Text Analysis API to analyze and classify your input search term or
+                        URL. The API is a package of Natural Language Processing and Machine Learning-powered APIs for
+                        analyzing and extracting various kinds of information from textual content.
+                    </p>
+                    <hr>
+                    <p>
+                        There are currently two search options. The first one uses Aylien's Sentiment Analysis. It will
+                        return information on your search term, such as the tone (positive, neutral, or negative), and
+                        whether or not the term is subjective or objective.
+                    </p>
+                    <hr>
+                    <p>
+                        The second option uses Aylien's Summarization feature, and requires that you provide a URL. This
+                        option is an easy way to summarize a news article or blog post into a few key sentences, for
+                        example. Regardless of the amount of text at the URL you provide, this option will return no
+                        more than 3 sentences.
+                    </p>
+
+                </div>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <h3>Text Sentiment Analysis</h3>
+                    <input id="sentiment" type="text" name="input" value="" placeholder="Input text you'd like to analyze for sentiment...">
+                    <input type="submit" class="button" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <h3>URL Summarization</h3>
+                    <input id="summarize" type="text" name="input" value="" placeholder="Input a URL you'd like to summarize...">
+                    <input type="submit" class="button" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
+                <div class="results">News results:</div>
                 <div id="results"></div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <h3 class="footer-title">&copy; Ivan Olmo 2020</h3>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fas fa-envelope-square"></i></a>
         </footer>
 
     </body>

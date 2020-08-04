@@ -1,0 +1,40 @@
+footer {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  background-color: #FEDA6A;
+
+  .footer-title {
+    font-size: 0.5em;
+    margin: 5px;
+    padding-top: 5px;
+  }
+
+  .fa-facebook-square {
+    color: #3B5998;
+    background: #FFFFFF;
+  }
+
+  .fa-twitter-square {
+    color: #55ACEE;
+    background: #FFFFFF;
+  }
+
+  .fa-linkedin {
+    color: #0E76A8;
+    background: #FFFFFF;
+  }
+
+  .fa-envelope-square {
+    background: #D44638;
+    color: #C6C6C6;
+  }
+
+  i.fab,
+  i.fas {
+    line-height: 20px;
+    border-radius: 50%;
+    width: 20px;
+    margin-right: 2px;
+  }
+}
