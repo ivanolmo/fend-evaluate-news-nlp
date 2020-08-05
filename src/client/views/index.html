@@ -35,10 +35,10 @@
                     </p>
 
                 </div>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
+                <form class="" onsubmit="return Client.sentiment(event)">
                     <h3>Text Sentiment Analysis</h3>
                     <input id="sentiment" type="text" name="input" value="" placeholder="Input text you'd like to analyze for sentiment...">
-                    <input type="submit" class="button" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input type="submit" class="button" value="submit" onclick="return Client.sentiment(event)" onsubmit="return Client.sentiment(event)">
                 </form>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <h3>URL Summarization</h3>
@@ -48,7 +48,7 @@
             </section>
 
             <section>
-                <div class="results">News results:</div>
+                <div class="results">Text results:</div>
                 <div id="results"></div>
             </section>
         </main>
