@@ -1,26 +1,37 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-let path = require('path');
-const express = require('express');
-const mockAPIResponse = require('./mockAPI.js');
-let aylien = require('aylien-news-api');
 
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const Aylien = require("aylien_textapi");
 const app = express();
+const port = 9000;
 
-app.use(express.static('dist'));
+const textapi = new Aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+});
 
-console.log(__dirname);
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("dist"));
 
-app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'));
-})
+app.get("/", function (request, response) {
+    response.sendFile("index.html")
+});
+
+app.post("/sentiment", (request, response) => {
+    const term = request.body.text;
+    textapi.sentiment({
+        'text': `${term}`
+    }, (error, result) => {
+        response.send(result);
+    });
+});
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!');
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse);
-})
+app.listen(port, function () {
+    console.log(`Aylien natural language processing app listening on port ${port}!`);
+});
