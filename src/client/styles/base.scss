@@ -4,27 +4,36 @@ body {
     min-height: 100vh;
     background-color: #D9D9D9;
 
-
-    main {
-        //flex: 2;
-    }
-
     section {
         max-width: 800px;
         margin: 50px auto;
 
-        #app__heading {
+        #app-heading {
             color: #D9D9D9;
             padding: 1em;
             font-size: 1.5em;
             background-color: #393F4D;
             border-radius: 25px;
             margin-bottom: 25px;
-        }
-    }
 
-    p {
-        padding: 0.75em;
+            p {
+                padding: 0.5em;
+            }
+        }
+
+        #sentiment-results-container,
+        #summary-results-container {
+            visibility: hidden;
+            font-size: 1.5em;
+            border: 1px solid #545454;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 0.5em 0;
+
+            div {
+                padding: 16px;
+            }
+        }
     }
 
     h3 {
@@ -34,13 +43,5 @@ body {
 
     hr {
         border: none;
-    }
-
-    .results {
-        font-size: 2em;
-        border: 1px solid #545454;
-        border-radius: 10px;
-        padding: 10px;
-        margin: 0.5em 0;
     }
 }
