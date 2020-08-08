@@ -1,27 +1,30 @@
-function sentiment(event) {
+const sentiment = (event) => {
   event.preventDefault();
 
-  const searchTerm = document.getElementById("sentiment").value;
+  const text = document.getElementById('sentiment-search').value;
 
-  if (!searchTerm) return;
+  if (!text) return;
 
-  console.log(`running sentiment analysis using the term: ${searchTerm}`);
-
-  fetch("/sentiment", {
-    method: "POST",
-    mode: "cors",
+  fetch('/sentiment', {
+    method: 'POST',
+    mode: 'cors',
     headers: {
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     },
-    body: JSON.stringify(searchTerm)
+    body: JSON.stringify({ text })
   })
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
-      console.log(data);
-      document.getElementById("search-term").innerHTML = searchTerm;
-      document.getElementById("results").innerHTML = data.polarity;
-      document.getElementById("subjectivity").innerHTML = data.subjectivity;
+      document.getElementById('sentiment-results-container').style.visibility = 'visible';
+      document.getElementById('search-term').innerHTML = text;
+      document.getElementById('sentiment-form').reset();
+      const fields = ['polarity', 'subjectivity', 'polarity_confidence', 'subjectivity_confidence'];
+      fields.forEach((field) => {
+        document.getElementById(field).innerHTML = data[field];
+      })
     });
 }
 
-export { sentiment };
+export {
+  sentiment
+};
