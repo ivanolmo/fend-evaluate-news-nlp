@@ -35,7 +35,7 @@ app.post("/summarize", (request, response) => {
     const url = request.body.url;
     textapi.summarize({
         'url': `${url}`,
-        'sentences_number': '3'
+        'sentences_number': '4'
     }, (error, result) => {
         response.send(result);
     })
