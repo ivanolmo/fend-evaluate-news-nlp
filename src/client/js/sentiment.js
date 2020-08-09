@@ -15,11 +15,14 @@ const sentiment = (event) => {
   })
     .then(response => response.json())
     .then(data => {
-      document.getElementById('sentiment-results-container').style.visibility = 'visible';
+      let sentimentContainer = document.getElementById('sentiment-results-container');
+      sentimentContainer.style.display = 'block';
+
       document.getElementById('search-term').innerHTML = text;
       document.getElementById('sentiment-form').reset();
+
       const fields = ['polarity', 'subjectivity', 'polarity_confidence', 'subjectivity_confidence'];
-      fields.forEach((field) => {
+      fields.forEach(field => {
         document.getElementById(field).innerHTML = data[field];
       })
     });
