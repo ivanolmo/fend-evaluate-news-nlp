@@ -31,6 +31,16 @@ app.post("/sentiment", (request, response) => {
     });
 });
 
+app.post("/summarize", (request, response) => {
+    const url = request.body.url;
+    textapi.summarize({
+        'url': `${url}`,
+        'sentences_number': '3'
+    }, (error, result) => {
+        response.send(result);
+    })
+});
+
 // designates what port the app will listen to for incoming requests
 app.listen(port, function () {
     console.log(`Aylien natural language processing app listening on port ${port}!`);
