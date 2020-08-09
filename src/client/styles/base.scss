@@ -31,9 +31,15 @@ body {
             margin: 0.5em 0;
 
             div,
-            ul,
-            li {
+            p {
                 padding: 16px;
+            }
+
+            #search-term-title,
+            #searched-url-title,
+            #url-summary-title {
+                background: #FEDA6A;
+                border-radius: 10px;
             }
         }
     }

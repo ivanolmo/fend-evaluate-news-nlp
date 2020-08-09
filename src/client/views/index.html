@@ -30,8 +30,7 @@
                     <p>
                         The second option uses Aylien's Summarization feature, and requires that you provide a URL. This
                         option is an easy way to summarize a news article or blog post into a few key sentences.
-                        Regardless of the amount of text at the URL you provide, this option will return no more than 3
-                        sentences.
+                        At this time, this option is limited to 4 summary sentences.
                     </p>
 
                 </div>
@@ -49,16 +48,20 @@
 
             <section>
                 <div id="sentiment-results-container">
-                    <div>Search Term: <span id="search-term"></span></div>
+                    <div id="search-term-title">Search Term: <span id="search-term"></span></div>
                     <div>Polarity: <span id="polarity"></span></div>
                     <div>Polarity Confidence: <span id="polarity_confidence"></span></div>
                     <div>Subjectivity: <span id="subjectivity"></span></div>
                     <div>Subjectivity Confidence: <span id="subjectivity_confidence"></span></div>
                 </div>
                 <div id="summary-results-container">
-                    <div>Your search URL:</div>
+                    <div id="searched-url-title">Searched URL:</div>
                     <div id="searched-url"></div>
-                    <div>URL Summary:</div>
+                    <div id="url-summary-title">URL Summary:</div>
+                    <p id="summary-1"></p>
+                    <p id="summary-2"></p>
+                    <p id="summary-3"></p>
+                    <p id="summary-4"></p>
                 </div>
             </section>
         </main>

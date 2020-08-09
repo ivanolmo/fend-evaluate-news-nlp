@@ -21,16 +21,26 @@ const summarize = (event) => {
       document.getElementById('searched-url').innerHTML = url;
       document.getElementById('summary-form').reset();
 
-      let list = document.createElement('ul');
+      document.getElementById('summary-1').innerHTML = data.sentences[0];
+      document.getElementById('summary-2').innerHTML = data.sentences[1];
+      document.getElementById('summary-3').innerHTML = data.sentences[2];
+      document.getElementById('summary-4').innerHTML = data.sentences[3];
 
-      data.sentences.forEach(sentence => {
-        console.log(sentence);
-        let li = document.createElement('li');
-        li.textContent = sentence;
-        list.appendChild(li);
+      let lastElem = document.getElementById('summary-4');
+      lastElem.scrollIntoView({
+        behavior: 'smooth'
       });
 
-      summaryContainer.appendChild(list);
+      // let list = document.createElement('ul');
+
+      // data.sentences.forEach(sentence => {
+      //   console.log(sentence);
+      //   let li = document.createElement('li');
+      //   li.textContent = sentence;
+      //   list.appendChild(li);
+      // });
+
+      // summaryContainer.appendChild(list);
     });
 }
 
