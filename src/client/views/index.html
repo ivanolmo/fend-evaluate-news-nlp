@@ -40,10 +40,10 @@
                     <input id="sentiment-search" type="text" name="input" placeholder="Input text you'd like to analyze for sentiment...">
                     <input type="submit" class="button" value="submit" onclick="return Client.sentiment(event)" onsubmit="return Client.sentiment(event)">
                 </form>
-                <form id="summary-form" onsubmit="return Client.summary(event)">
+                <form id="summary-form" onsubmit="return Client.summarize(event)">
                     <h3>URL Summarization</h3>
                     <input id="summarize" type="text" name="input" placeholder="Input a URL you'd like to summarize...">
-                    <input type="submit" class="button" value="submit" onclick="return Client.summary(event)" onsubmit="return Client.summary(event)">
+                    <input type="submit" class="button" value="submit" onclick="return Client.summarize(event)" onsubmit="return Client.summarize(event)">
                 </form>
             </section>
 
@@ -57,6 +57,8 @@
                 </div>
                 <div id="summary-results-container">
                     <div>Your search URL:</div>
+                    <div id="searched-url"></div>
+                    <div>URL Summary:</div>
                 </div>
             </section>
         </main>
