@@ -16,10 +16,14 @@ const summarize = (event) => {
     .then(response => response.json())
     .then(data => {
       let summaryContainer = document.getElementById('summary-results-container');
-      summaryContainer.style.display = 'block';
 
-      document.getElementById('searched-url').innerHTML = url;
+      summaryContainer.style.display = 'block';
+      document.getElementById('sentiment-results-container').style.display = 'none';
+
       document.getElementById('summary-form').reset();
+
+      document.getElementById('searched-url').innerHTML = url.link(url);
+
 
       document.getElementById('summary-1').innerHTML = data.sentences[0];
       document.getElementById('summary-2').innerHTML = data.sentences[1];
@@ -30,17 +34,6 @@ const summarize = (event) => {
       lastElem.scrollIntoView({
         behavior: 'smooth'
       });
-
-      // let list = document.createElement('ul');
-
-      // data.sentences.forEach(sentence => {
-      //   console.log(sentence);
-      //   let li = document.createElement('li');
-      //   li.textContent = sentence;
-      //   list.appendChild(li);
-      // });
-
-      // summaryContainer.appendChild(list);
     });
 }
 

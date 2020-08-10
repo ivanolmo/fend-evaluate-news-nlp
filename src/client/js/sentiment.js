@@ -16,7 +16,9 @@ const sentiment = (event) => {
     .then(response => response.json())
     .then(data => {
       let sentimentContainer = document.getElementById('sentiment-results-container');
+
       sentimentContainer.style.display = 'block';
+      document.getElementById('summary-results-container').style.display = 'none';
 
       document.getElementById('search-term').innerHTML = text;
       document.getElementById('sentiment-form').reset();
