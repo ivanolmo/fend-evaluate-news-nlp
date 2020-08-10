@@ -1,9 +1,14 @@
+import { validateUrl } from "./validateURL";
+
 const summarize = (event) => {
   event.preventDefault();
 
   const url = document.getElementById('summarize').value;
 
-  fetch('/summarize', {
+  if (!validateUrl(url)) {
+    alert('Please input a valid URL!');
+  } else {
+    fetch('/summarize', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -36,6 +41,7 @@ const summarize = (event) => {
           behavior: 'smooth'
         });
       });
+  }
 }
 
 export {
