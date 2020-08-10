@@ -1,4 +1,4 @@
-import {validateUrl} from "..";
+import { validateUrl } from "..";
 
 describe('Test URL validator', () => {
   test('Testing for valid URL input from user', () => {
